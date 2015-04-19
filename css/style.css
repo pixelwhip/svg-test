@@ -76,16 +76,33 @@ td, th {
   background-position: center;
 }
 
-.svg-bg.fallback--gradient {
+.svg-bg--gradient {
   background-image: url("../img/kool-aid-man.png");
   background-image:
     linear-gradient(transparent, transparent),
     url("../img/kool-aid-man.svg");
 }
 
-.no-svg .svg-bg.fallback--modernizr {
+.no-svg .svg-bg--modernizr {
   background-image: url("../img/kool-aid-man.png");
-  background-image:
-    linear-gradient(transparent, transparent),
-    url("../img/kool-aid-man.svg");
 }
+
+/**
+ * SVG Object tests
+ */
+
+.svg-object {
+  background-color: salmon;
+  height: 400px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.no-svg .svg-object--modernizr {
+  background-repeat: no-repeat;
+  background-image: url("../img/kool-aid-man.svg");
+  background-size: contain;
+  background-position: center;
+  background-image: url("../img/kool-aid-man.png");
+}
+
