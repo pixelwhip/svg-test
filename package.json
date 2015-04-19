@@ -1,0 +1,20 @@
+{
+  "name": "svg-test",
+  "version": "1.0.0",
+  "description": "SVG snippets for browser testing",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelwhip/svg-test.git"
+  },
+  "author": "John Ferris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixelwhip/svg-test/issues"
+  },
+  "homepage": "https://github.com/pixelwhip/svg-test",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-gh-pages": "^0.10.0"
+  }
+}

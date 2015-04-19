@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+td, th {
+  text-align: left;
+  padding: 3em 1em;
+  border-top: 1px solid silver;
+}
+
+.css-manipulate .kool-aid {
+  color: green;
+}
