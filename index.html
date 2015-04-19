@@ -98,12 +98,11 @@
 
     <!-- Print Modernizr Results to screen -->
     <script type="text/javascript">
-      var modernizrTable = document.createElement('table'),
-          modernizrThead = document.createElement('thead');
-          modernizrTbody = document.createElement('tbody');
+      var modernizrTable = $('<table class="test-table">'),
+          modernizrThead = $('<thead>');
+          modernizrTbody = $('<tbody>');
 
-      modernizrTable.className = 'test-table';
-      modernizrThead.innerHTML = '<tr><th>Modernizr Test</th><th>Result</th></tr>';
+      modernizrThead.html('<tr><th>Modernizr Test</th><th>Result</th></tr>');
 
       var createTestRow = function(test, result) {
         var resultClass = result ? "passed" : "failed";
@@ -113,13 +112,13 @@
 
       for(var test in Modernizr) {
         if (Modernizr.hasOwnProperty(test)) {
-          modernizrTbody.innerHTML += createTestRow(test, Modernizr[test]);
+          modernizrTbody.append(createTestRow(test, Modernizr[test]));
         }
       }
 
-      modernizrTable.appendChild(modernizrThead);
-      modernizrTable.appendChild(modernizrTbody);
-      document.body.appendChild(modernizrTable);
+      modernizrTable.append(modernizrThead);
+      modernizrTable.append(modernizrTbody);
+      $('body').append(modernizrTable);
     </script>
 
     <!-- Picturefill -->
