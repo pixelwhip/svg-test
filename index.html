@@ -78,6 +78,45 @@
       </table>
     </section>
 
+    <section>
+      <h2>background-image</h2>
+      <table>
+        <tr>
+          <th><h3>Fallback: none</h3></th>
+          <td>
+            <div class="svg-bg"></div>
+          </td>
+        </tr>
+        <tr>
+          <th><h3>Fallback: linear-gradient hack</h3></th>
+          <td>
+            <div class="svg-bg svg-bg--gradient"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h3>Fallback: Modernizr</h3>
+            <cite><a href="https://css-tricks.com/svg-fallbacks/">https://css-tricks.com/svg-fallbacks/</a></cite>
+          </th>
+          <td>
+            <div class="svg-bg svg-bg--modernizr"></div>
+          </td>
+        </tr>
+        <tr>
+          <th><h3>Embedded Media Queries</h3></th>
+          <td>
+            <div class="svg-bg"></div>
+            <div class="svg-bg" style="width: 200px; height: 200px"></div>
+
+          </td>
+        </tr>
+        <tr>
+          <th>JS color change</th>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="nocheck js-manipulate" /></td>
+        </tr>
+      </table>
+    </section>
+
     <!-- jQuery -->
     <script src="js/jquery-1.11.2.min.js"></script>
 
