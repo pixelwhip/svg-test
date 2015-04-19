@@ -78,19 +78,22 @@
       </table>
     </section>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
     <!-- Modernizr -->
     <script src="js/modernizr.js"></script>
     <script type="text/javascript">
-      if (!Modernizr.svg) {
-        var imgs = document.getElementsByTagName('img');
-        var svgExtension = /.*\.svg$/
-        var l = imgs.length;
-        for(var i = 0; i < l; i++) {
-          if(imgs[i].src.match(svgExtension) && imgs[i].getAttribute("data-fallback") != null) {
-            imgs[i].src = imgs[i].getAttribute("data-fallback");
+      (function($, Modernizr){
+        $(document).ready(function () {
+          if (!Modernizr.svg) {
+            $("img[src$='.svg'][data-fallback]").each(function(i, e) {
+              var $img = $(e);
+              $img.attr('src', $img.attr('data-fallback'));
+            });
           }
-        }
-      }
+        });
+      })(jQuery, Modernizr)
     </script>
 
     <!-- Print Modernizr Results to screen -->
