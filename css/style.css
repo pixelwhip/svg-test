@@ -35,3 +35,28 @@ td, th {
 .css-manipulate .kool-aid {
   color: green;
 }
+
+.test-table {
+  margin: 2em auto;
+}
+
+.test-table th,
+.test-table td {
+  padding: .5em;
+}
+
+.test-table tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+.passed {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: green;
+}
+
+.failed {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+}

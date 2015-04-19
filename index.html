@@ -78,12 +78,41 @@
       </table>
     </section>
 
+    <!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+    <script type="text/javascript">
+      var modernizrTable = document.createElement('table'),
+          modernizrThead = document.createElement('thead');
+          modernizrTbody = document.createElement('tbody');
+
+      modernizrTable.className = 'test-table';
+      modernizrThead.innerHTML = '<tr><th>Modernizr Test</th><th>Result</th></tr>';
+
+      var createTestRow = function(test, result) {
+        var resultClass = result ? "passed" : "failed";
+
+        return '<tr><th>' + test + '</th><td class="' + resultClass + '">' + result + '</td></tr>';
+      }
+
+      for(var test in Modernizr) {
+        if (Modernizr.hasOwnProperty(test)) {
+
+          modernizrTbody.innerHTML += createTestRow(test, Modernizr[test]);
+        }
+      }
+
+      modernizrTable.appendChild(modernizrThead);
+      modernizrTable.appendChild(modernizrTbody);
+      document.body.appendChild(modernizrTable);
+
+    </script>
+
     <!-- Picturefill -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/2.3.0/picturefill.min.js"></script>
 
     <!-- SVGeezy -->
     <script src="bower_components/svgeezy/svgeezy.min.js"></script>
-    <script>
+    <script type="text/javascript">
       svgeezy.init('nocheck', 'png');
     </script>
   </body>
