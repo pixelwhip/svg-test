@@ -82,11 +82,11 @@
     <script src="js/modernizr.js"></script>
     <script type="text/javascript">
       if (!Modernizr.svg) {
-        var imgs = document.querySelectorAll('img[data-fallback]');
+        var imgs = document.getElementsByTagName('img');
         var svgExtension = /.*\.svg$/
         var l = imgs.length;
         for(var i = 0; i < l; i++) {
-          if(imgs[i].src.match(svgExtension)) {
+          if(imgs[i].src.match(svgExtension) && imgs[i].getAttribute("data-fallback") != null) {
             imgs[i].src = imgs[i].getAttribute("data-fallback");
           }
         }
