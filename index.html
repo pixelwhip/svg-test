@@ -27,12 +27,12 @@
       <table>
         <tr>
           <th><h3>Fallback: none</h3></th>
-          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man"/></td>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="nocheck"/></td>
         </tr>
         <tr>
           <th><h3>Fallback: inline js</h3>
           <cite><a href="http://callmenick.com/post/svg-fallback-with-png">http://callmenick.com/post/svg-fallback-with-png</a></cite></th>
-          <td><img src="img/kool-aid-man.svg" onerror="this.src='img/kool-aid-man.png'; this.onerror=null;" alt="kool-aid-man"/></td>
+          <td><img src="img/kool-aid-man.svg" onerror="this.src='img/kool-aid-man.png'; this.onerror=null;" alt="kool-aid-man" class="nocheck"/></td>
         </tr>
         <tr>
           <th>
@@ -50,7 +50,7 @@
         </tr>
         <tr>
           <th><h3>Fallback: svgeezy</h3></th>
-          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="svgeezy"></td>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man"></td>
         </tr>
         <tr>
           <th>
@@ -58,26 +58,33 @@
             <cite><a href="https://css-tricks.com/svg-fallbacks/">https://css-tricks.com/svg-fallbacks/</a></cite>
             <cite><a href="http://callmenick.com/post/svg-fallback-with-png">http://callmenick.com/post/svg-fallback-with-png</a></cite>
           </th>
-          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" data-fallback="img/kool-aid-man.png" /></td>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="nocheck" data-fallback="img/kool-aid-man.png" ></td>
         </tr>
         <tr>
           <th><h3>CSS color change</h3></th>
-          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="css-manipulate" /></td>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="nocheck css-manipulate" /></td>
         </tr>
         <tr>
           <th><h3>Embedded Media Queries</h3></th>
           <td>
-            <img src="img/kool-aid-man.svg" alt="kool-aid-man" width="400" />
-            <img src="img/kool-aid-man.svg" alt="kool-aid-man" width="200" />
+            <img src="img/kool-aid-man.svg" alt="kool-aid-man" width="400" class="nocheck"/>
+            <img src="img/kool-aid-man.svg" alt="kool-aid-man" width="200" class="nocheck"/>
           </td>
         </tr>
         <tr>
           <th>JS color change</th>
-          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="js-manipulate" /></td>
+          <td><img src="img/kool-aid-man.svg" alt="kool-aid-man" class="nocheck js-manipulate" /></td>
         </tr>
       </table>
     </section>
 
+    <!-- Picturefill -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/2.3.0/picturefill.min.js"></script>
+
+    <!-- SVGeezy -->
+    <script src="bower_components/svgeezy/svgeezy.min.js"></script>
+    <script>
+      svgeezy.init('nocheck', 'png');
+    </script>
   </body>
 </html>
