@@ -81,6 +81,20 @@
     <!-- Modernizr -->
     <script src="js/modernizr.js"></script>
     <script type="text/javascript">
+      if (!Modernizr.svg) {
+        var imgs = document.querySelectorAll('img[data-fallback]');
+        var svgExtension = /.*\.svg$/
+        var l = imgs.length;
+        for(var i = 0; i < l; i++) {
+          if(imgs[i].src.match(svgExtension)) {
+            imgs[i].src = imgs[i].getAttribute("data-fallback");
+          }
+        }
+      }
+    </script>
+
+    <!-- Print Modernizr Results to screen -->
+    <script type="text/javascript">
       var modernizrTable = document.createElement('table'),
           modernizrThead = document.createElement('thead');
           modernizrTbody = document.createElement('tbody');
@@ -96,7 +110,6 @@
 
       for(var test in Modernizr) {
         if (Modernizr.hasOwnProperty(test)) {
-
           modernizrTbody.innerHTML += createTestRow(test, Modernizr[test]);
         }
       }
@@ -104,7 +117,6 @@
       modernizrTable.appendChild(modernizrThead);
       modernizrTable.appendChild(modernizrTbody);
       document.body.appendChild(modernizrTable);
-
     </script>
 
     <!-- Picturefill -->
